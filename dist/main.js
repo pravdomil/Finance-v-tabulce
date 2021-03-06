@@ -23,15 +23,19 @@ function install() {
 }
 
 function openTrigger() {
-  run("open")
+  run({ task: "open" })
 }
 
 function dailyTrigger() {
-  run("daily")
+  run({ task: "daily" })
+}
+
+function run(flags) {
+  Elm.Main.init({ flags })
 }
 
 try {
-  const url = "https://raw.githubusercontent.com/pravdomil/finance-v-tabulce/master/dist/finance.js"
+  const url = "https://raw.githubusercontent.com/pravdomil/finance-v-tabulce/master/dist/elm.js"
   const code = UrlFetchApp.fetch(url).getContentText()
   eval(code)
 } catch (e) {
