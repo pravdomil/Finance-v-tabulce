@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# To stop if any command fails.
+set -e
+
+# To stop on unset variables.
+set -u
+
+# To be in project root.
+cd "${0%/*}/.."
+
+# To compile our app.
+elm make src/Main.elm --optimize --output dist/elm.js
+elm-ffi dist/elm.js
