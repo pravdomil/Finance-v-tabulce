@@ -19,7 +19,7 @@ function install() {
     ScriptApp.newTrigger("openTrigger").forSpreadsheet(a).onOpen().create()
   }
 
-  openTrigger()
+  run({ task: "install" })
 }
 
 function openTrigger() {
