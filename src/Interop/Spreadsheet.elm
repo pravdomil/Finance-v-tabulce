@@ -11,6 +11,6 @@ type Spreadsheet
 
 toast : String -> String -> Float -> Spreadsheet -> Task Exception ()
 toast _ _ _ _ =
-    "_v3.toast(_v0, _v1, _v2)"
+    "_v3.toast(_v1, _v0, _v2)"
         |> JavaScript.run
         |> JavaScript.decode (Decode.succeed ())
