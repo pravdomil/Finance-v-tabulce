@@ -22,7 +22,7 @@ decode decoder a =
                         Task.succeed b
 
                     Err b ->
-                        Task.fail (Exception (Decode.errorToString b))
+                        Task.fail (Exception ("TypeError: " ++ Decode.errorToString b))
             )
 
 
